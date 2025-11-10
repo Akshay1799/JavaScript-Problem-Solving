@@ -1,5 +1,5 @@
-function longestSubstring(str) {
-  let maxLength = 0
+function subString(str){
+  let maxLength = 0;
   let left = 0;
   let charSet = new Set();
 
@@ -8,10 +8,10 @@ function longestSubstring(str) {
       charSet.delete(str[left]);
       left++;
     }
-    charSet.add(str[right])
-    maxLength = Math.max(maxLength, right-left+1)
+    charSet.add(str[right]);
+    maxLength = Math.max(maxLength, right-left+1);
   }
   return maxLength;
 }
 
-console.log(longestSubstring("ababcbb"));
+console.log(subString('aabcbb'));
