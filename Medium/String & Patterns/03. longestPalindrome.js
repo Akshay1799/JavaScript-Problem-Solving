@@ -1,6 +1,5 @@
-
 function longestPalindrome(str, left, right){
-    let longestPalindrome = '';
+    let palindrome = " ";
 
     if(str.length === 0)return;
 
@@ -8,26 +7,26 @@ function longestPalindrome(str, left, right){
         let left = i;
         let right = i;
 
-        while (left>=0 && right<str.length && str[right]===str[left]) {
-            if (right-left+1 > longestPalindrome.length) {
-                longestPalindrome = str.substring(left, right+1)
+        while (left >=0 && right < str.length && str[right]===str[left]) {
+            if (right-left+1>palindrome.length) {
+                palindrome = str.substring(left, right+1)
             }
             left--;
             right++;
         }
-        left = i;
-        right= i+1;
 
-        while (left>=0 && right<str.length && str[left]===str[right]) {
-            if (right-left+1 > longestPalindrome.length) {
-                longestPalindrome = str.substring(left, right+1)
+        left = i;
+        right = i+1;
+
+        while(left>=0 && right < str.length && str[right]===str[left]){
+            if (right-left+1>palindrome.length) {
+                palindrome = str.substring(left, right+1);
             }
             left--;
-            right++
+            right++;
         }
-
         
     }
-    return longestPalindrome
+    return palindrome;
 }
 console.log(longestPalindrome('babad'));

@@ -13,14 +13,12 @@ function isValid(str){
             stack.push(char)
         }
         else{
-            if(str.length === 0)return;
+            if(stack.length === 0)return false;
             let lastOpen = stack.pop();
             if(map[lastOpen] !== char) return false;
         }
-        
     }
     return stack.length === 0;
 }
-
 console.log(isValid("()[]{}")); 
 console.log(isValid("(]"));
