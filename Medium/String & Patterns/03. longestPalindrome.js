@@ -1,4 +1,4 @@
-function longestPalindrome(str, left, right){
+function longestPalindrome(str,){
     let palindrome = " ";
 
     if(str.length === 0)return;
